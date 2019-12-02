@@ -1,0 +1,275 @@
+
+
+
+#body_gio_hang{
+	background-color:#f4f4f4;
+}
+
+#nav{
+  position: sticky;
+  top: 0;
+}
+nav.navbar.navbar-expand-lg.navbar-light.bg-light.sticky-top.navbar-shadow {
+      box-shadow: 7px 5px 9px 1px grey;
+    font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+img.rounded-circle {
+  box-shadow: 7px 4px 10px 3px #a57979;
+}
+
+
+#tittle_body{
+  margin: 30px 0px 0px 650px;
+}
+
+#icon{
+  margin-right: 80px;
+
+}
+
+.ca_shadow{
+  border: none;
+
+}
+
+
+ .ca_shadow:hover{
+  
+  box-shadow: 7px 5px 15px 0px grey;
+}
+
+.my_card_body{
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+ 
+}
+.my_image{
+  margin-bottom: -15px;
+}
+._tittle{
+  font-family: cursive;
+    font-size: 19px;
+    font-weight: bold;
+    color: #070502eb;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+a._tittle{
+  text-decoration: none;
+}
+
+.my_button:hover{
+  background: rgb(233, 38, 174);
+}
+
+#user:hover{
+  color: black;
+}
+#card_shopping{
+ 
+  text-decoration: none;
+  color: red;
+}
+
+
+#card_shopping:hover{
+  color: rgb(196, 16, 16);
+
+}
+#user{
+  text-decoration: none;
+  color:rgb(8, 7, 7);
+}
+
+#myBtn{
+ display: none;
+  position: fixed;
+  
+  right: 45px;
+  bottom: 100px;
+}
+
+.list_item{
+  margin-left: 100px;
+  display: inline-block;
+ 
+}
+
+.image{
+  max-width: 100%;
+}
+
+
+p.price{
+  color: rgb(225, 19, 19);
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+.item{
+  display: inline-block;
+  
+  margin-bottom: 15px;
+  margin-left: 20px;
+  width: 275px;
+}
+
+.a{
+  color: rgb(204, 207, 211);
+}
+.a:hover{
+  text-decoration: none;
+  color: red;
+}
+a.hvred:hover{
+  color: red;
+}
+
+.item .text-center{
+  text-decoration-color: none;
+  color: black;
+}
+
+.card-title{
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+      margin-bottom: 0px;
+}
+.item:hover{
+  text-decoration: none;
+}
+.image:hover{
+  transform: scale(1);
+}
+
+.login-form {
+  width: 340px;
+  margin: 50px auto;
+}
+.login-form .form {
+  margin-bottom: 15px;
+  background: #f7f7f7;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  padding: 30px;
+}
+.login-form h2 {
+  margin: 0 0 15px;
+}
+.form-control, .btn {
+  min-height: 38px;
+  border-radius: 2px;
+  width: 220px;
+}
+.btn {        
+  font-size: 15px;
+  font-weight: bold;
+  width: 70px;
+}
+
+.button_fb{
+  background-color: #365899;
+  font-size: 10px;
+  width: 50px;
+  height: 19px;
+  padding: initial;
+  vertical-align: middle;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: white;
+}
+
+a.hvred {
+  color: #070502eb;
+  text-decoration: none;
+}
+
+a.font-bold.hvred {
+  font-weight: bold;
+}
+
+.card.ca_shadow {
+  margin: auto;
+}
+
+.d-flex.flex-row.justify-content-center.text-white.mr-5 {
+  font-size: 25px;
+  margin-left: -60px;
+}
+
+#fb:hover{
+  color: #365899;
+}
+#istg:hover{
+  color: rebeccapurple;
+}
+#tt:hover{
+  color: blue;
+}
+#ggpl:hover{
+  color: red;
+}
+
+@media only screen and (max-width: 768px){
+  #carouselExampleControls{
+      display: none;
+  }
+}
+
+.btn .btn-outline-secondary .my-2 .my-sm-0{
+
+  width: 20px;
+}
+
+textarea.form-control-content{
+
+  border-radius: 5px;
+  
+  width: 100%;
+}
+
+.btn_count, .btn_count_1{
+vertical-align: middle;
+padding: 0px 10px 0px 10px;
+background-color: white;
+border: 1px solid rgb(165, 159, 159);
+
+
+}
+
+.quantity {
+  padding-top: 20px;
+  margin-right: 60px;
+  margin-top:-20px;
+}
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  width: 32px;
+  font-size: 16px;
+  color: #43484D;
+  font-weight: 300;
+}
+ 
+button.button_as {
+  width: 30px;
+  height: 30px;
+  background-color: #E1E8EE;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.minus-btn img {
+  margin-bottom: 3px;
+}
+.plus-btn img {
+  margin-top: 2px;
+}
+ 
+button:focus,
+input:focus {
+  outline:0;
+}

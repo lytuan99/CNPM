@@ -116,9 +116,9 @@
 	</div>
 </div>
 
-		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-2" type="search" placeholder="Search"
-				aria-label="Search">
+		<form method="post" action="/searchProduct" class="form-inline my-2 my-lg-0">
+			<input name="search" class="form-control mr-2" type="text" placeholder="Search"
+				aria-label="search"> 
 			<button class="btn btn-outline-secondary my-2 my-0" type="submit">Search</button>
 		</form>
 	</div>

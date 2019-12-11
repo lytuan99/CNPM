@@ -57,10 +57,7 @@
 								<td>${user.email }</td>
 								<td>${user.numberPhone }</td>
 								<td>${user.account }</td>
-								<td style="text-align: center;"><a
-									href="/admin/edit-user/${user.id}"
-									class="btn btn-info btn_edit"> <span
-										class="glyphicon glyphicon-edit"></span> Edit
+								<td style="text-align: center;">
 								</a> &nbsp; <a href="javascript:void(0);"
 									onclick="Blog.deleteForm('modalDeleteForm', ${user.id }, '/rest/api/user/delete')"
 									class="btn btn-danger btn_edit"> <span

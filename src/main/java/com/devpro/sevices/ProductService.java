@@ -24,6 +24,14 @@ public class ProductService {
 	@PersistenceContext EntityManager entityManager;
 	
 	@SuppressWarnings("unchecked")
+	public List<Post_Product_detail> searchAllProduct(String input){
+		
+		String jpql = "select p from Post_Product_detail p where p.name like '%" + input + "%'";
+		Query query = entityManager.createQuery(jpql,Post_Product_detail.class);
+		return query.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
 	public List<Post_Product_detail> search(String name_category){
 //		String jpql1 = "select p.* from post_product_detail p, category c where p.id_category = c.id and c.name = 'Áo thun' ";
 

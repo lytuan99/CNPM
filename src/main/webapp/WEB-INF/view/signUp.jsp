@@ -25,7 +25,19 @@
 	<%@ include file="/WEB-INF/view/layout/header.jsp"%>
 	<!-- thông báo tới người dùng -->
 	
-		<c:choose>
+
+<div class="container-fluid mt-5" style="background:white;">
+        <div class="row">
+            <div class="col-lg-8 ">
+            
+		
+                <form:form modelAttribute="signUp" action="/signUp" class="ml-5">
+                    <div class="container bg-light">
+                        <h1>Đăng ký</h1>
+                        <p>Điền đầy đủ thông tin vào các ô dưới đây.</p>
+                        <hr>
+
+			<c:choose>
 				<c:when test="${ status == 'success'}">
 				
 					<div class=" alert alert-success">
@@ -34,41 +46,41 @@
 				</c:when>
 				<c:when test="${ status == 'failed'}">
 					<div class=" alert alert-danger">
-						<Strong>Failed!</Strong>
+						<Strong>Failed! bạn phải điền đầy đủ và chính xác thông tin của mình!!!</Strong>
+					</div>
+				</c:when>
+				<c:when test="${ status == 'failedMail'}">
+					<div class=" alert alert-danger">
+						<Strong>Failed! bạn nhập sai địa chỉ email!!</Strong>
+					</div>
+				</c:when>
+				<c:when test="${ status == 'failedPass'}">
+					<div class=" alert alert-danger">
+						<Strong>Failed! mật khẩu của bạn phải trên 8 ký tự!!</Strong>
 					</div>
 				</c:when>
 				 
 			</c:choose>
-
-<div class="container-fluid mt-5" style="background:white;">
-        <div class="row">
-            <div class="col-lg-8 ">
-                <form:form modelAttribute="signUp" action="/signUp" class="ml-5">
-                    <div class="container bg-light">
-                        <h1>Đăng ký</h1>
-                        <p>Điền đầy đủ thông tin vào các ô dưới đây.</p>
-                        <hr>
-
                         <label for="text"><b>Full Name</b></label>
-                        <form:input path="fullName" type="text" placeholder="Enter Name" name="name" />
+                        <form:input class="myinput" path="fullName" type="text" placeholder="Enter Name" name="name" />
 
                         <label for="text"><b>City</b></label>
-                        <form:input path="city" type="text" placeholder="Enter city" name="city" />
+                        <form:input class="myinput" path="city" type="text" placeholder="Enter city" name="city" />
                         
                         <label for="text"><b>Mobile</b></label>
-                        <form:input path="numberPhone" type="text" placeholder="Enter number" name="number" />
+                        <form:input class="myinput" path="numberPhone" type="text" placeholder="Enter number" name="number" />
 
                         <label for="email"><b>Email</b></label>
-                        <form:input path="email" type="text" placeholder="Enter Email" name="email" />
+                        <form:input class="myinput" path="email" type="text" placeholder="Enter Email" name="email" />
                         
                         <label for="text"><b>Account name</b></label>
-                        <form:input path="account" type="text" placeholder="Enter number" name="number" />
+                        <form:input class="myinput" path="account" type="text" placeholder="Enter number" name="number" />
 
                         <label for="psw"><b>Password</b></label>
-                        <form:input path="password" type="password" placeholder="Enter Password" name="psw" />
+                        <form:input class="myinput" path="password" type="password" placeholder="Enter Password" name="psw" />
 
                         <label for="psw-repeat"><b>Repeat Password</b></label>
-                        <input type="password" placeholder="Repeat Password" name="psw-repeat"/>
+                        <input class="myinput" type="password" placeholder="Repeat Password" name="psw-repeat"/>
                         <hr>
                         <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
 

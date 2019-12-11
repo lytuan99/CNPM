@@ -30,20 +30,7 @@
 			
 			<div class="row">
 				<div class="col-md-12" style="padding: 5px;">
-	<c:choose>
-				<c:when test="${ status == 'success'}">
-				
-					<div class=" alert alert-success">
-						<Strong>Success!</Strong>
-					</div>
-				</c:when>
-				<c:when test="${ status == 'failed'}">
-					<div class=" alert alert-danger">
-						<Strong>Failed!</Strong>
-					</div>
-				</c:when>
-				 
-			</c:choose>
+	
 					<div class="card">
 						<div class="card-header">Sản phẩm mới</div>
 						<div class="card-body">

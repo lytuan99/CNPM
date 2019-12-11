@@ -7,10 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.devpro.entities.Bill_Customer;
 import com.devpro.entities.CartUtil;
-import com.devpro.entities.RestResponse;
 import com.devpro.repository.Bill_CustomerRepository;
 import com.devpro.repository.CategoryRepository;
 import com.devpro.repository.Post_productRepository;
@@ -164,37 +161,28 @@ public class HomeController {
 		return "categories/giay";
 	}
 	
+	private String input;
+	@RequestMapping(value = {"/searchProduct"}, method = { RequestMethod.POST })
+	public String search(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
+		// trả về tên view.
+		input = request.getParameter("search");
+		System.out.println(input);
+		
+		return "search";
+	}
+	
+	@RequestMapping(value = {"/searchProduct"}, method = { RequestMethod.GET })
+	public String searchView(@PathVariable String search,final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
+		// trả về tên view.
+		input = "nam";
+		search = input;
+		model.addAttribute("key", input);
+		model.addAttribute("_posts", productService.searchAllProduct(input));
+		return "search";
+	}
 	
 	
 	
-	
-
-//	@RequestMapping(value = {"/ao_thun"}, method = { RequestMethod.GET })
-//	public String aoThun(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
-//		// trả về tên view.
-//
-//		model.addAttribute("ao_thun", productService.search("'Áo thun'"));
-//		model.addAttribute("_categories", categoryRepository.findAll());
-//		return "categories/ao_thun";
-//	}
-//	
-//	@RequestMapping(value = {"/giay_tay"}, method = { RequestMethod.GET })
-//	public String giay(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
-//		// trả về tên view.
-//
-//		model.addAttribute("giay", productService.search("'giày tây'"));
-//		model.addAttribute("_categories", categoryRepository.findAll());
-//		return "categories/giay_tay";
-//	}
-//	
-//	@RequestMapping(value = {"/quan"}, method = { RequestMethod.GET })
-//	public String quan(final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
-//		// trả về tên view.
-//
-//		model.addAttribute("quan", productService.search("'quần kaki'"));
-//		model.addAttribute("_categories", categoryRepository.findAll());
-//		return "categories/quan";
-//	}
 	
 	
 	@RequestMapping(value = {"/mua_ngay/{productId}"}, method = {RequestMethod.GET})

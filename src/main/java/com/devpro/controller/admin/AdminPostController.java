@@ -57,7 +57,7 @@ public class AdminPostController {
 		
 		post_Product_detail.setGiaFormat();  // format lại giá tiền vd: 10000000 -> 10.000.000
 		model.addAttribute("categories", categoryRepository.findAll());
-		model.addAttribute("status", "success");
+		
 		if (postImage != null && postImage.length > 0) {
 			
 			for (MultipartFile multipartFile : postImage) {
@@ -98,6 +98,7 @@ public class AdminPostController {
 	public String editProduct(@PathVariable int productId, final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
 		Post_Product_detail product= postRepository.getOne(productId);
 		model.addAttribute("product", product);
+		
 		model.addAttribute("categories", categoryRepository.findAll());
 		idProductEdit = productId;
 		// trả về tên view.
@@ -112,15 +113,15 @@ public class AdminPostController {
 //		Post_Product_detail product1 = postRepository.getOne(idProductEdit);
 //		if (postImage != null && postImage.length > 0) {
 //			
-//			for (int i = 0; i < postImage.length; i++) {   // nếu admin thêm vào x ảnh thì phải xóa bỏ x ảnh trong DB để đảm bảo luôn có 5 ảnh với mỗi sản phẩm
 //				
-//				product1.getImages_attachments().remove(i);
-//				System.out.println("---------------------- xóa 1 lần nhé :)=================");
-//			}
-//			
-//			System.out.println();
-//			System.out.println("==============================" + postImage.length);
-//			System.out.println();
+//				for (int i = 0; i < postImage.length; i++) {   // nếu admin thêm vào x ảnh thì phải xóa bỏ x ảnh trong DB để đảm bảo luôn có 5 ảnh với mỗi sản phẩm
+//					
+//					product1.getImages_attachments().remove(0);
+//					System.out.println("---------------------- xóa 1 lần nhé :)=================");
+//				}
+//				
+//				
+//				
 //			for (MultipartFile multipartFile : postImage) {
 //				
 //				if(multipartFile.getSize() <= 0) continue;
@@ -140,9 +141,10 @@ public class AdminPostController {
 //		}
 		product.setCreatedDate(new Date());
 		postRepository.save(product);
+		model.addAttribute("status", "success");
 
 		// trả về tên view.
-		return listProduct(model,request,response);
+		return editProduct(idProductEdit, model, request, response);
 	}
 	
 }

@@ -26,7 +26,20 @@
 	
 	<div id="main" class="container">
 			<h1 class="mt-2"></h1>
-			
+			<c:choose>
+				<c:when test="${ status == 'success'}">
+				
+					<div class=" alert alert-success">
+						<Strong>Success!</Strong>
+					</div>
+				</c:when>
+				<c:when test="${ status == 'failed'}">
+					<div class=" alert alert-danger">
+						<Strong>Failed!</Strong>
+					</div>
+				</c:when>
+				 
+			</c:choose>
 			<div class="row">
 				<div class="col-md-12" style="padding: 5px;">
 

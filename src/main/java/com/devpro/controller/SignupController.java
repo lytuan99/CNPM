@@ -51,15 +51,35 @@ public class SignupController {
 	@RequestMapping(value = {"/signUp"}, method = {RequestMethod.POST})
 	public String saveSignUpBySpring(@ModelAttribute("signUp") SignUp signUp,
 			final ModelMap model, final HttpServletRequest request, final HttpServletResponse response) {
-		System.out.println(signUp.getFullName());
-		System.out.println(signUp.getEmail());
+	
+		if(signUp.getCity() == null || signUp.getEmail() == null || signUp.getFullName() == null || signUp.getPassword() == null
+				 || signUp.getNumberPhone() == null || signUp.getAccount() == null) {
+			model.addAttribute("status", "failed");
+			model.addAttribute("signUp", signUp);
+			return "signUp";
+		}
 		
-		signUpRepository.save(signUp);
-		 
-		//lấy dữ liệu về database xong phải thông báo cho người dùng là đã lưu thành công
-		model.addAttribute("status","success");
-		model.addAttribute("signUp", signUp);
-	return "signUp";
+		else if(signUp.getEmail().contains("@gmail.com") == false) {
+			model.addAttribute("status", "failedMail");
+			model.addAttribute("signUp", signUp);
+			return "signUp";
+		}
+		
+		else if(signUp.getPassword().length() < 8) {
+			model.addAttribute("status", "failedPass");
+			model.addAttribute("signUp", signUp);
+			return "signUp";
+		}
+		else {
+			signUpRepository.save(signUp);
+			 
+			//lấy dữ liệu về database xong phải thông báo cho người dùng là đã lưu thành công
+			model.addAttribute("status","success");
+			model.addAttribute("signUp", signUp);
+			return "signUp";
+		}
+		
+		
 	}
 	
 	@RequestMapping(value = {"/signUp_normal"}, method = {RequestMethod.POST})

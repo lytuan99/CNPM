@@ -51,7 +51,7 @@
 
                     <c:forEach var="product" items="${products }">
                         <tr>   <!-- thẻ này xác định một hàng bên trong bảng-->
-                            <td><img src="${pageContext.request.contextPath}/files/${product.images_attachments.get(0).name }" alt="" style="width:10rem;"></td>     <!-- thẻ này xác định một ô bên trong bảng-->
+                            <td><img src="${pageContent.request.contextPath}/files/${product.images_attachments.get(0).name}" alt="" style="width:10rem;"></td>     <!-- thẻ này xác định một ô bên trong bảng-->
                             <td class="align-middle">${product.name }</td>
                             <td class="align-middle">${product.trangThai }</td>
                             <td class="align-middle">${product.kho }</td>

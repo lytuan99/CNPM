@@ -77,6 +77,8 @@ public class Post_Product_detail extends BaseEntity {
 		images_attachments.add(images_attachment);
 		images_attachment.setPost_Product_detail(this);
 	}
+	
+	
 
 	public void removeImages_attachment(Images_attachment images_attachment) {
 		images_attachments.remove(images_attachment);

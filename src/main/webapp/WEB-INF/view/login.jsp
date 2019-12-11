@@ -20,11 +20,11 @@
 	href="${pageContext.request.contextPath}/css/login.css">
 <!-- =========== J S  ==============-->
 </head>
-<body class="bg-dark">
+<body  class="bg-dark" style="" >
     
     
   
-        <form class="modal-content" action="/perform_login" method="post">
+        <form class="modal-content" action="/perform_login" method="post" style="background:none; border: white;">
           <div class="imgcontainer">
            
             <img src="image/account.png" alt="Avatar" class="avatar">
@@ -42,22 +42,22 @@
     </c:if>				 
 			
           <div class="container">
-            <label for="uname"><b>Username</b></label>
+            <label for="uname"><b style="color: white;">Username</b></label>
             <input type="text" placeholder="Enter Username" name="uname" >
       
-            <label for="psw"><b>Password</b></label>
+            <label for="psw"><b style="color: white;">Password</b></label>
             <input type="password" placeholder="Enter Password" name="psw"  >
               
             <button type="submit" >Login</button>
             <label>
-              <input type="checkbox" checked="checked" name="remember"> Remember me
+              <input type="checkbox" checked="checked" name="remember" ><span style="color: white;"> Remember me</span> 
             </label>
+            <span style="color: white;" class="psw">Forgot <a href="#">password?</a></span>
           </div>
       
-          <div class="container" style="background-color:#f1f1f1">
+          
             
-            <span class="psw">Forgot <a href="#">password?</a></span>
-          </div>
+            
         </form>
 
 </body>
